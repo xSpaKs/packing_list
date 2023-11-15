@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <script src="script.js" defer></script>
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+        />
+    </head>
+    <body>
+        <div class="error"></div>
+        <form action="get">
+            <label for="night">Combien de nuits voyagez-vous ?</label>
+            <input type="number" name="night" value="3" />
+
+            <label for="night">Vers quel climat ?</label>
+            <select name="climate">
+                <option value="modéré">Modéré</option>
+                <option value="chaud">Chaud</option>
+                <option value="froid">Froid</option>
+            </select>
+
+            <input type="submit" class="submit" />
+        </form>
+
+        <div class="packing_list"></div>
+        <button class="restart" style="display: none">Recommencer</button>
+    </body>
+</html>
