@@ -17,12 +17,16 @@ form.addEventListener("submit", (e) => {
     packingList.innerHTML = "";
     error.innerHTML = "";
 
-    if (!form.night.value > 0) {
+    if (
+        !Number.isInteger(parseFloat(form.night.value)) ||
+        parseInt(form.night.value) <= 0
+    ) {
         errorNight = document.createElement("p");
         errorNight.innerHTML =
             "La valeur nuit doit être entière et supérieure à 0";
         error.appendChild(errorNight);
     }
+
     if (
         form.climate.value != "chaud" &&
         form.climate.value != "modéré" &&
@@ -137,11 +141,11 @@ const t_shirt = () => {
 
 const sweat = () => {
     let nb_sweats = 0;
-    let pluriel = "";
+    let pluriel = "s";
 
     if (form.night.value < 4) {
         nb_sweats = 1;
-        pluriel = "s";
+        pluriel = "";
     } else if (4 <= form.night.value <= 6) nb_sweats = 2;
     else nb_sweats = 3;
 
@@ -160,11 +164,11 @@ const sweat = () => {
 
 const pantalon = () => {
     let nb_pantalon = 0;
-    let pluriel = "";
+    let pluriel = "s";
 
     if (form.night.value < 4) {
         nb_pantalon = 1;
-        pluriel = "s";
+        pluriel = "";
     } else if (4 <= form.night.value <= 6) nb_pantalon = 2;
     else nb_pantalon = 3;
 
